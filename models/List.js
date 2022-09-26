@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
-const CommentSchema = new mongoose.Schema({
-  comment: {
+const ListSchema = new mongoose.Schema({
+  listName: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
+  listType: {
     required: true,
+    gathering: Boolean,
+    crafting: Boolean,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -22,10 +23,14 @@ const CommentSchema = new mongoose.Schema({
     default: Date.now,
     immutable: true,
   },
-  post: {
+  listItems: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Post",
+    ref: "Item"
+  }],
+  updatedAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
-module.exports = mongoose.model("Comment", CommentSchema);
+module.exports = mongoose.model("List", ListSchema);
