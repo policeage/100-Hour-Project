@@ -23,14 +23,19 @@ const ListSchema = new mongoose.Schema({
     default: Date.now,
     immutable: true,
   },
-  listItems: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Item"
-  }],
   updatedAt: {
     type: Date,
     default: Date.now,
   },
+  listItems: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Item",
+    itemAdded: {
+      type: Date,
+      default: Date.now,
+      immutable: true,
+    },
+  }],
 });
 
 module.exports = mongoose.model("List", ListSchema);

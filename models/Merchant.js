@@ -15,10 +15,10 @@ const MerchantSchema = new mongoose.Schema({
     price: {
         currencyType: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Item"
+            ref: "Item",
+            amount: Number,
         },
-        amount: Number,
-    }
+    },
   }],
   createdAt: {
     type: Date,

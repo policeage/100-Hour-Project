@@ -2,6 +2,14 @@ const mongoose = require("mongoose");
 
 const CraftingMaterialSchema = new mongoose.Schema ({
     materialName: String,
+    craftable: {
+        type: Boolean,
+        required: true,
+      },
+      gatherable: {
+        type: Boolean,
+        required: true,
+      },
     usedIn: {
         itemName: [{
             type: mongoose.Schema.Types.ObjectId,

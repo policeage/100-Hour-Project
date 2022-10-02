@@ -11,6 +11,8 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments")
+const listRoutes = require("./routes/lists")
+const raidRoutes = require("./routes/raids")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -58,6 +60,9 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comments", commentRoutes);
+app.use("/gathering", listRoutes);
+app.use("/crafting", listRoutes);
+app.use("/raids", raidRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
