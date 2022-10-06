@@ -5,28 +5,24 @@ const List = require("../models/List")
 module.exports = {
   getCraft: async (req, res) => {
     try {
-      const lists = await List.find({ user: req.user.id });
-      const craftList = await lists.find({ "listType.crafting": true });
-      res.render("crafting.ejs", { lists: craftList, user: req.user });
+      const lists = await List.find({ $and: [{ user: req.user.id }, { listType: {crafting: true} }] });
+      res.render("crafting.ejs", { lists: lists, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
   getGather: async (req, res) => {
     try {
-      const lists = await List.find({ user: req.user.id });
-      const gatherList = await lists.find({ "listType.gathering": true })
-      res.render("gathering.ejs", { lists: gatherList, user: req.user });
+      const lists = await List.find({ $and: [{ user: req.user.id }, { listType: {gathering: true} }] });
+      res.render("gathering.ejs", { lists: lists, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
   createList: async (req, res) => {
     try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
-
-      await Post.create({
+      
+      await List.create({
         listName: req.body.title,
         listType: result.secure_url,
         cloudinaryId: result.public_id,

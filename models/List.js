@@ -6,9 +6,14 @@ const ListSchema = new mongoose.Schema({
     required: true,
   },
   listType: {
-    required: true,
-    gathering: Boolean,
-    crafting: Boolean,
+    gathering: {
+      type: Boolean,
+      required: true,
+    },
+    crafting: {
+      type: Boolean,
+      required: true,
+    },
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -27,15 +32,19 @@ const ListSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  listItems: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Item",
-    itemAdded: {
-      type: Date,
-      default: Date.now,
-      immutable: true,
+  listItems: [
+    {
+    item: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Item",
+      itemAdded: {
+        type: Date,
+        default: Date.now,
+        immutable: true,
+      },
     },
-  }],
+  }
+],
 });
 
 module.exports = mongoose.model("List", ListSchema);

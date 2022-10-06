@@ -2,7 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Raid = require("../models/Raid");
 
 module.exports = {
-  getRaids: async (req, res) => {
+  getRaid: async (req, res) => {
     try {
       const raids = await Raid.find({ user: req.user.id });
       res.render("raid.ejs", { raids: raids, user: req.user });
@@ -12,8 +12,8 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      const raids = await Raid.find().sort({ createdAt: "desc" });
+      res.render("raidfeed.ejs", { raids: raids });
     } catch (err) {
       console.log(err);
     }
