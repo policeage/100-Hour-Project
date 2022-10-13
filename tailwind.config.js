@@ -8,7 +8,13 @@ module.exports = {
       lg: '976px',
       xl: '1440px'
     },
-    extend: {},
+    extend: {
+      colors: {
+        royalBlue: 'rgba(51, 75, 147, 1)',
+        blackBlue: 'rgba(20, 33, 73, 1)',
+        textGold: 'rgba(255, 219, 112, 1)',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }

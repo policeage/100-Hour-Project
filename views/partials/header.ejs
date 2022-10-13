@@ -14,13 +14,26 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body>
+  <body class="bg-blackBlue">
     <header class="relative container mx-auto p-6">
       <nav class="flex items-center justify-between">
-        <div class="pt-2">
+        <div class="flex pt-2 items-center space-x-2">
           <img src="imgs/automaton_stormwaker_ff11_headshot.png" alt="Stormwaker Automaton FF11">
+          <h1 class="text-lg text-textGold hover:text-white"><a href="/">Automaton Helper</a></h1>
         </div>
-        <h1><a href="/">Automaton Helper</a></h1>
+        <!-- Nav Options -->
+        <div class="hidden md:flex space-x-6 text-lg">
+          <a href="/" class="text-textGold hover:text-white">Raids</a>
+          <a href="/" class="text-textGold hover:text-white">Crafting</a>
+          <a href="/" class="text-textGold hover:text-white">Gathering</a>
+          <a href="/" class="text-textGold hover:text-white">Island</a>
+        </div>
+        <!-- Buttons If-Else statement needed for Login Sign up else Profile Button -->
+        <div class="flex space-x-6">
+        <a href="/" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black">Login</a>
+        <a href="/" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black">Sign-Up</a>
+
+        </div>
       </nav>
     </header>
   </body>

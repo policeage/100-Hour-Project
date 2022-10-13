@@ -1,12 +1,43 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-    <div class="flex justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
-        <a href="/raids" class="col-3 btn btn-primary"> Raids</a>
-        <a href="/crafting" class="col-3 btn btn-primary"> Crafting</a>
-        <a href="/gathering" class="col-3 btn btn-primary"> Gathering</a>
+<main class="relative container mx-auto pt-6">
+    <div class="flex flex-wrap justify-around mx-5">
+        <div class="card w-96 shadow-xl bg-royalBlue">
+            <div class="card-body">
+              <h2 class="card-title text-textGold">Raids</h2>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam dolorum, qui.</p>
+              <div class="card-actions justify-end">
+                <a href="/raids" class="p-3 px-6 pt-2 text-white bg-blackBlue rounded-md baseline hover:bg-textGold hover:text-black"> Raids</a>
+            </div>
+            </div>
+          </div>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Crafting</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam dolorum, qui.</p>
+              <div class="card-actions justify-end">
+                <a href="/crafting" class="p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black"> Crafting</a>
+            </div>
+            </div>
+          </div>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Gathering</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam dolorum, qui.</p>
+              <div class="card-actions justify-end">
+                <a href="/gathering" class="p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black"> Gathering</a>
+            </div>
+            </div>
+          </div>
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Island</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam dolorum, qui.</p>
+              <div class="card-actions justify-end">
+                <a href="/island" class="p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black"> Island</a>
+            </div>
+            </div>
+          </div>
     </div>
 </main>
     
