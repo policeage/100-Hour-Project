@@ -4,14 +4,21 @@ const List = require("../models/List")
 
 module.exports = {
   getCraft: async (req, res) => {
+    if (!req.user) {
+      return res.render("crafting.ejs", { user: req.user })
+    }
     try {
       const lists = await List.find({ $and: [{ user: req.user.id }, { listType: {crafting: true} }] });
-      res.render("crafting.ejs", { lists: lists, user: req.user });
+      return res.render("crafting.ejs", { lists: lists, user: req.user });
     } catch (err) {
       console.log(err);
+      return res.render("index.ejs")
     }
   },
   getGather: async (req, res) => {
+    if (!req.user) {
+      return res.render("gathering.ejs", { user: req.user })
+    }
     try {
       const lists = await List.find({ $and: [{ user: req.user.id }, { listType: {gathering: true} }] });
       res.render("gathering.ejs", { lists: lists, user: req.user });

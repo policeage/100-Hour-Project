@@ -13,7 +13,8 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const raids = await Raid.find().sort({ createdAt: "desc" });
-      res.render("raidfeed.ejs", { raids: raids });
+      const userRaid = await Raid.find({ user: req.user.id });
+      res.render("raidfeed.ejs", { raids: raids, userRaid: userRaid, user: req.user });
     } catch (err) {
       console.log(err);
     }
