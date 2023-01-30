@@ -31,11 +31,13 @@
         <!-- Buttons If-Else statement needed for Login Sign up else Profile Button -->
         <div class="flex space-x-6">
           <% if (!user) { %>
-        <a href="/login" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black">Login</a>
-        <a href="/signup" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black">Sign-Up</a>
+        <a href="/login" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md hover:bg-textGold hover:text-black">Login</a>
+        <a href="/signup" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md hover:bg-textGold hover:text-black">Sign-Up</a>
             <% } else { %>
-        <a href="/profile" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black"><%= user.userName %></a>
-        <a href="/logout" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md baseline hover:bg-textGold hover:text-black">Logout</a>
+        <div class="avatar">
+        <a href="/profile" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-full hover:bg-textGold hover:text-black"><%= user.userName %></a>
+        </div>
+        <a href="/logout" class="hidden md:block p-3 px-6 pt-2 text-white bg-royalBlue rounded-md hover:bg-textGold hover:text-black">Logout</a>
         <% } %>
         </div>
       </nav>

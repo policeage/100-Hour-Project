@@ -12,7 +12,7 @@ module.exports = {
       return res.render("crafting.ejs", { lists: lists, user: req.user });
     } catch (err) {
       console.log(err);
-      return res.render("index.ejs")
+      return res.render("index.ejs", { user: req.user })
     }
   },
   getGather: async (req, res) => {
@@ -24,6 +24,7 @@ module.exports = {
       res.render("gathering.ejs", { lists: lists, user: req.user });
     } catch (err) {
       console.log(err);
+      return res.render("index.ejs", { user: req.user })
     }
   },
   createList: async (req, res) => {
