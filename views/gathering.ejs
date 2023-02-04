@@ -1,6 +1,62 @@
 <%- include('partials/header') -%>
-<h1>Gathering</h1>
-
-
-
+<main class="relative container mx-auto pt-2">
+    <!-- Side Bar Component -->
+    <div class="drawer drawer-mobile">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-wrap justify-start">
+          <!-- Page content here -->
+          <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open Item Finder</label>
+          <!-- Table -->
+          <!-- Create script to add table rows -->
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Item Name</th>
+                  <th>Gathering Job</th>
+                  <th>Time Available</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <th>1</th>
+                  <td>Cy Ganderton</td>
+                  <td>Quality Control Specialist</td>
+                  <td>Blue</td>
+                </tr>
+                <!-- row 2 -->
+                <tr class="hover">
+                  <th>2</th>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                  <td>Purple</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                  <th>3</th>
+                  <td>Brice Swyre</td>
+                  <td>Tax Accountant</td>
+                  <td>Red</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Table End -->
+        </div> 
+        <div class="drawer-side">
+          <label for="my-drawer-2" class="drawer-overlay"></label> 
+          <ul class="menu p-4 w-80 bg-base-100 text-base-content bg-royalBlue text-textGold">
+            <!-- Sidebar content here -->
+            <!-- Create Script to search Gathering Collection and add Script to add item to the table row -->
+            <li><input type="text" placeholder="Search Items Here" class="input input-bordered w-full max-w-xs" /></li>
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
+          </ul>
+        
+        </div>
+      </div>
+    </main>
 <%- include('partials/footer') -%>

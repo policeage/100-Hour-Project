@@ -1,5 +1,54 @@
 <%- include('partials/header') -%>
 
-    <h1>Crafting</h1>
-
+<main class="relative container mx-auto pt-2">
+<!-- Side Bar Component -->
+<div class="drawer drawer-mobile">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-wrap justify-around">
+      <!-- Page content here -->
+      <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open Item Finder</label>
+      <!-- Cards -->
+      <!-- Create Script to add Cards -->
+      <div class="card w-96 bg-base-100 shadow-xl my-3">
+        <div class="card-body">
+          <h2 class="card-title">Item Name Placeholder</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste porro repudiandae optio, ab sit voluptas vitae quis voluptatibus cum autem doloremque nobis eum nesciunt cumque labore pariatur, aliquid voluptate?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Remove Item</button>
+          </div>
+        </div>
+      </div>
+      <div class="card w-96 bg-base-100 shadow-xl my-3">
+        <div class="card-body">
+          <h2 class="card-title">Item Name Placeholder</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste porro repudiandae optio, ab sit voluptas vitae quis voluptatibus cum autem doloremque nobis eum nesciunt cumque labore pariatur, aliquid voluptate?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Remove Item</button>
+          </div>
+        </div>
+      </div>
+      <div class="card w-96 bg-base-100 shadow-xl my-3">
+        <div class="card-body">
+          <h2 class="card-title">Item Name Placeholder</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste porro repudiandae optio, ab sit voluptas vitae quis voluptatibus cum autem doloremque nobis eum nesciunt cumque labore pariatur, aliquid voluptate?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Remove Item</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card End -->
+    </div> 
+    <div class="drawer-side">
+      <label for="my-drawer-2" class="drawer-overlay"></label> 
+      <ul class="menu p-4 w-80 bg-base-100 text-base-content bg-royalBlue text-textGold">
+        <!-- Sidebar content here -->
+        <!-- Add Script to Search Crafting Collection and add script to create cards on click -->
+        <li><input type="text" placeholder="Search Items Here" class="input input-bordered w-full max-w-xs" /></li>
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+      </ul>
+    
+    </div>
+  </div>
+</main>
 <%- include('partials/footer') -%>
